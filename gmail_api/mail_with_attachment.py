@@ -91,7 +91,7 @@ def auth_and_send(recipient, email_body, attachment):
     service = build('gmail', 'v1', credentials=creds)
 
     # Sender and receiver details
-    sender = "atiq@zangoh.com"
+    sender = "hello@zangoh.com"
     to = recipient
     subject = "Event Update: ``Integrate Generative AI natively into modern products`` webinar"
     body_text = email_body

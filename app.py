@@ -184,11 +184,11 @@ def handle_mentions(body, say):
 
             ## Update Zoho CRM
 
-            submit_lead(name=str(card_name), 
-                            email=str(card_email), 
-                            contact=clean_mobile_number(card_phone), 
-                            company= str(card_company), 
-                            designation= str(card_designation))
+            submit_lead(name=str(name), 
+                            email=str(email), 
+                            contact='not provided', 
+                            company= 'not provided', 
+                            designation= 'not provided')
 
         else:
             say(f"{email} does not exists.")
