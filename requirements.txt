@@ -1,0 +1,17 @@
+slack-sdk
+slack-bolt
+Flask
+python-dotenv
+google-api-python-client 
+google-auth-httplib2 
+google-auth-oauthlib
+autogen
+google-generativeai
+pillow
+aiohttp
+requests
+autogen-agentchat[llm,gemini]~=0.2
+pandas
+bs4
+dnspython
+
