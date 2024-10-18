@@ -5,7 +5,7 @@ from slack_sdk.errors import SlackApiError
 from slack_bolt.adapter.flask import SlackRequestHandler
 from slack_bolt import App
 from dotenv import find_dotenv, load_dotenv
-from flask import Flask, request
+from flask import Flask, request, render_template
 # from functions import draft_email
 import certifi
 from gmail_api.mail_with_attachment import auth_and_send
@@ -47,20 +47,6 @@ def get_bot_user_id():
     except SlackApiError as e:
         print(f"Error: {e}")
 
-def my_function(text):
-    """
-    Custom function to process the text and return a response.
-    In this example, the function converts the input text to uppercase.
-
-    Args:
-        text (str): The input text to process.
-
-    Returns:
-        str: The processed text.
-    """
-    response = text.upper()
-    return response
-
 def download_image(file_url, file_name):
     """
     Download the image from Slack using the file URL with requests.
@@ -96,6 +82,9 @@ def download_image(file_url, file_name):
     except SlackApiError as e:
         print(f"Error fetching file info: {e}")
 
+@flask_app.route('/')
+def index():
+    return render_template("index.html")
 
 
 @app.event("app_mention")
