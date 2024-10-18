@@ -11,7 +11,7 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port the app runs on (if applicable)
-EXPOSE 3000
+EXPOSE 5000
 
 # Run the bot
 CMD ["python", "app.py"]
